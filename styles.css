@@ -1,38 +1,22 @@
-body {
-    font-family: serif;
-    background-color: #f8c1cb;
-    color: #19171B;
-    padding: 20px;
-}
+document.addEventListener("DOMContentLoaded", () => {
+    const botones = document.querySelectorAll(".ramo");
 
-h1, h2 {
-    text-align: center;
-}
+    botones.forEach(boton => {
+        boton.addEventListener("click", () => {
+            if (boton.classList.contains("bloqueado")) return;
 
-#malla {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-}
+            boton.style.backgroundColor = "#9E4D57"; // Marcado como aprobado
+            boton.disabled = true;
 
-button {
-    background-color: #75020F;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    width: 300px;
-    font-size: 16px;
-    border-radius: 5px;
-    transition: background 0.3s;
-}
-
-button:hover:enabled {
-    background-color: #9E4D57;
-}
-
-button:disabled {
-    background-color: gray;
-    cursor: not-allowed;
-}
+            const desbloquea = boton.dataset.desbloquea;
+            if (desbloquea) {
+                desbloquea.split(",").forEach(id => {
+                    const siguiente = document.getElementById(id);
+                    if (siguiente) {
+                        siguiente.classList.remove("bloqueado");
+                    }
+                });
+            }
+        });
+    });
+});
