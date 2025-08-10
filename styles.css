@@ -1,19 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const botones = document.querySelectorAll(".ramo");
+    const cursos = document.querySelectorAll(".curso");
 
-    botones.forEach(boton => {
-        boton.addEventListener("click", () => {
-            if (boton.classList.contains("bloqueado")) return;
+    cursos.forEach(curso => {
+        if (!curso.dataset.prereq) {
+            curso.classList.remove("bloqueado");
+            curso.classList.add("desbloqueado");
+        }
 
-            boton.style.backgroundColor = "#9E4D57"; // Marcado como aprobado
-            boton.disabled = true;
+        curso.addEventListener("click", () => {
+            if (curso.classList.contains("desbloqueado")) {
+                curso.classList.remove("desbloqueado");
+                curso.classList.add("completado");
 
-            const desbloquea = boton.dataset.desbloquea;
-            if (desbloquea) {
-                desbloquea.split(",").forEach(id => {
-                    const siguiente = document.getElementById(id);
-                    if (siguiente) {
-                        siguiente.classList.remove("bloqueado");
+                cursos.forEach(sig => {
+                    if (sig.dataset.prereq === curso.dataset.id) {
+                        sig.classList.remove("bloqueado");
+                        sig.classList.add("desbloqueado");
                     }
                 });
             }
