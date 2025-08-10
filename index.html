@@ -8,91 +8,95 @@
 </head>
 <body>
     <h1>Malla Curricular Interactiva</h1>
-    <div class="malla">
 
+    <div id="malla">
         <!-- PRIMER AÑO -->
-        <h2>Primer Año - Semestre 1</h2>
-        <button class="ramo" data-desbloquea="calculoII">Cálculo I</button>
-        <button class="ramo" data-desbloquea="fisicaII">Física I</button>
-        <button class="ramo" data-desbloquea="quimicaOrganica,termoCinetica">Química general</button>
-        <button class="ramo">Metodología del trabajo académico</button>
-        <button class="ramo">Dibujo en ingeniería</button>
-        <button class="ramo">Fundamentos de la matemática</button>
+        <h2>Primer Año</h2>
+        <h3>Semestre 1</h3>
+        <button class="ramo" id="calculo1" data-desbloquea="calculo2">Cálculo I</button>
+        <button class="ramo" id="fisica1" data-desbloquea="fisica2">Física I</button>
+        <button class="ramo" id="quimicaGeneral" data-desbloquea="quimicaOrganica,termoCinetica">Química General</button>
+        <button class="ramo" id="metodologia">Metodología del trabajo académico</button>
+        <button class="ramo" id="dibujo">Dibujo en ingeniería</button>
+        <button class="ramo" id="fundMat">Fundamentos de la matemática</button>
 
-        <h2>Semestre 2</h2>
-        <button id="calculoII" class="ramo bloqueado" data-desbloquea="ecuacionesDif">Cálculo II</button>
-        <button id="fisicaII" class="ramo bloqueado" data-desbloquea="fisicaModerna">Física II</button>
-        <button id="quimicaOrganica" class="ramo bloqueado">Química orgánica</button>
-        <button class="ramo" data-desbloquea="cienciaMat1">Introducción a Ingeniería de materiales</button>
-        <button class="ramo">Realidad nacional</button>
-        <button class="ramo">Lingüística, comprensión y redacción académica</button>
+        <h3>Semestre 2</h3>
+        <button class="ramo bloqueado" id="calculo2" data-desbloquea="ecuaciones">Cálculo II</button>
+        <button class="ramo bloqueado" id="fisica2" data-desbloquea="fisicaModerna">Física II</button>
+        <button class="ramo bloqueado" id="quimicaOrganica">Química orgánica</button>
+        <button class="ramo" id="introIngMat" data-desbloquea="cienciaMat1">Introducción a Ingeniería de materiales</button>
+        <button class="ramo" id="realidadNac">Realidad nacional</button>
+        <button class="ramo" id="linguistica">Lingüística, comprensión y redacción académica</button>
 
         <!-- SEGUNDO AÑO -->
-        <h2>Segundo Año - Semestre 3</h2>
-        <button class="ramo">Ciudadanía e interculturalidad</button>
-        <button id="ecuacionesDif" class="ramo bloqueado" data-desbloquea="algebraLineal">Ecuaciones diferenciales</button>
-        <button id="fisicaModerna" class="ramo bloqueado" data-desbloquea="mecanicaMat">Física moderna</button>
-        <button class="ramo" data-desbloquea="gestionCalidad">Estadística y diseño experimental aplicada a ingeniería de materiales</button>
-        <button id="termoCinetica" class="ramo bloqueado" data-desbloquea="fenomenosTrans">Termodinámica y cinética</button>
-        <button class="ramo">Filosofía de las ciencias</button>
+        <h2>Segundo Año</h2>
+        <h3>Semestre 3</h3>
+        <button class="ramo" id="ciudadania">Ciudadanía e interculturalidad</button>
+        <button class="ramo bloqueado" id="ecuaciones" data-desbloquea="algebra">Ecuaciones diferenciales</button>
+        <button class="ramo bloqueado" id="fisicaModerna" data-desbloquea="mecanicaMat">Física moderna</button>
+        <button class="ramo" id="estadistica" data-desbloquea="gestionCalidad">Estadística y diseño experimental aplicada a ingeniería de materiales</button>
+        <button class="ramo bloqueado" id="termoCinetica" data-desbloquea="fenomenos">Termodinámica y cinética</button>
+        <button class="ramo" id="filosofia">Filosofía de las ciencias</button>
 
-        <h2>Semestre 4</h2>
-        <button class="ramo">Ecología y conservación ambiental</button>
-        <button id="algebraLineal" class="ramo bloqueado" data-desbloquea="metodosNumericos">Álgebra lineal</button>
-        <button id="mecanicaMat" class="ramo bloqueado" data-desbloquea="ensayoMateriales">Mecánica de materiales</button>
-        <button id="cienciaMat1" class="ramo bloqueado" data-desbloquea="cienciaMat2">Ciencia de materiales I</button>
-        <button id="fenomenosTrans" class="ramo bloqueado" data-desbloquea="transfFases">Fenómenos de transferencia</button>
-        <button class="ramo">Economía general</button>
+        <h3>Semestre 4</h3>
+        <button class="ramo" id="ecologia">Ecología y conservación ambiental</button>
+        <button class="ramo bloqueado" id="algebra" data-desbloquea="metodosNum">Álgebra lineal</button>
+        <button class="ramo bloqueado" id="mecanicaMat" data-desbloquea="ensayoMat">Mecánica de materiales</button>
+        <button class="ramo bloqueado" id="cienciaMat1" data-desbloquea="cienciaMat2">Ciencia de materiales I</button>
+        <button class="ramo bloqueado" id="fenomenos" data-desbloquea="transformacionFases">Fenómenos de transferencia</button>
+        <button class="ramo" id="economia">Economía general</button>
 
         <!-- TERCER AÑO -->
-        <h2>Tercer Año - Semestre 5</h2>
-        <button class="ramo">Ética general y deontología</button>
-        <button id="gestionCalidad" class="ramo bloqueado">Gestión y control de calidad</button>
-        <button id="transfFases" class="ramo bloqueado" data-desbloquea="matMet,matCer1">Transformación de fases</button>
-        <button id="metodosNumericos" class="ramo bloqueado">Métodos numéricos aplicados a la ingeniería</button>
-        <button id="cienciaMat2" class="ramo bloqueado" data-desbloquea="matPol1,metCaracterizacion">Ciencia de materiales II</button>
-        <button class="ramo">Inglés</button>
+        <h2>Tercer Año</h2>
+        <h3>Semestre 5</h3>
+        <button class="ramo" id="etica">Ética general y deontología</button>
+        <button class="ramo bloqueado" id="gestionCalidad">Gestión y control de calidad</button>
+        <button class="ramo bloqueado" id="transformacionFases" data-desbloquea="matMet,matCer1">Transformación de fases</button>
+        <button class="ramo bloqueado" id="metodosNum">Métodos numéricos aplicados a la ingeniería</button>
+        <button class="ramo bloqueado" id="cienciaMat2" data-desbloquea="polimeros1,caractMat">Ciencia de materiales II</button>
+        <button class="ramo" id="ingles">Inglés</button>
 
-        <h2>Semestre 6</h2>
-        <button id="matPol1" class="ramo bloqueado" data-desbloquea="matPol2">Materiales polímeros I</button>
-        <button id="matMet" class="ramo bloqueado" data-desbloquea="soldaduraMet">Materiales metálicos</button>
-        <button id="ensayoMateriales" class="ramo bloqueado" data-desbloquea="ensayosNoDestructivos,mecanicaFractura">Ensayo de materiales</button>
-        <button class="ramo">Seguridad industrial y prevención de riesgos</button>
-        <button id="metCaracterizacion" class="ramo bloqueado" data-desbloquea="corrosion">Métodos de caracterización de materiales</button>
+        <h3>Semestre 6</h3>
+        <button class="ramo bloqueado" id="polimeros1" data-desbloquea="polimeros2">Materiales polímeros I</button>
+        <button class="ramo bloqueado" id="matMet" data-desbloquea="soldaduraMet">Materiales metálicos</button>
+        <button class="ramo bloqueado" id="ensayoMat" data-desbloquea="ensayosND,mecanicaFractura">Ensayo de materiales</button>
+        <button class="ramo" id="seguridad">Seguridad industrial y prevención de riesgos</button>
+        <button class="ramo bloqueado" id="caractMat" data-desbloquea="corrosion">Métodos de caracterización de materiales</button>
 
         <!-- CUARTO AÑO -->
-        <h2>Cuarto Año - Semestre 7</h2>
-        <button id="corrosion" class="ramo bloqueado" data-desbloquea="ingSuperficies">Corrosión y degradación de materiales</button>
-        <button id="matCer1" class="ramo bloqueado" data-desbloquea="matCer2">Materiales cerámicos I</button>
-        <button id="matPol2" class="ramo bloqueado" data-desbloquea="polimerosAvanzados">Materiales polímeros II</button>
-        <button id="soldaduraMet" class="ramo bloqueado" data-desbloquea="fundicionMat">Soldadura en materiales metálicos</button>
-        <button id="ensayosNoDestructivos" class="ramo bloqueado">Ensayos no destructivos</button>
-        <button class="ramo">Nanomateriales</button>
+        <h2>Cuarto Año</h2>
+        <h3>Semestre 7</h3>
+        <button class="ramo bloqueado" id="corrosion" data-desbloquea="superficies">Corrosión y degradación de materiales</button>
+        <button class="ramo bloqueado" id="matCer1" data-desbloquea="matCer2">Materiales cerámicos I</button>
+        <button class="ramo bloqueado" id="polimeros2" data-desbloquea="polimerosAvanzados">Materiales polímeros II</button>
+        <button class="ramo bloqueado" id="soldaduraMet" data-desbloquea="fundicion">Soldadura en materiales metálicos</button>
+        <button class="ramo" id="ensayosND">Ensayos no destructivos</button>
+        <button class="ramo" id="nano">Nanomateriales</button>
 
-        <h2>Semestre 8</h2>
-        <button id="matCer2" class="ramo bloqueado" data-desbloquea="ceramicosAvanzados">Materiales cerámicos II</button>
-        <button id="polimerosAvanzados" class="ramo bloqueado" data-desbloquea="matComp1">Polímeros avanzados</button>
-        <button id="ingSuperficies" class="ramo bloqueado" data-desbloquea="unionMat">Ingeniería de superficies</button>
-        <button id="mecanicaFractura" class="ramo bloqueado" data-desbloquea="simulacionEF">Mecánica de la fractura</button>
-        <button class="ramo">Análisis de fallas</button>
-        <button id="fundicionMat" class="ramo bloqueado">Fundición de materiales</button>
+        <h3>Semestre 8</h3>
+        <button class="ramo bloqueado" id="matCer2" data-desbloquea="ceramicosAvanzados">Materiales cerámicos II</button>
+        <button class="ramo bloqueado" id="polimerosAvanzados" data-desbloquea="compuestos1">Polímeros avanzados</button>
+        <button class="ramo bloqueado" id="superficies" data-desbloquea="unionMat">Ingeniería de superficies</button>
+        <button class="ramo bloqueado" id="mecanicaFractura" data-desbloquea="simulacion">Mecánica de la fractura</button>
+        <button class="ramo" id="fallas">Análisis de fallas</button>
+        <button class="ramo bloqueado" id="fundicion">Fundición de materiales</button>
 
         <!-- QUINTO AÑO -->
-        <h2>Quinto Año - Semestre 9</h2>
-        <button id="matComp1" class="ramo bloqueado" data-desbloquea="matComp2">Materiales compuestos I</button>
-        <button class="ramo">Selección de materiales</button>
-        <button id="simulacionEF" class="ramo bloqueado">Simulación por elementos finitos</button>
-        <button id="ceramicosAvanzados" class="ramo bloqueado">Cerámicos avanzados</button>
-        <button id="unionMat" class="ramo bloqueado">Unión de materiales</button>
-        <button class="ramo">Tecnología de concreto y sus materiales</button>
+        <h2>Quinto Año</h2>
+        <h3>Semestre 9</h3>
+        <button class="ramo bloqueado" id="compuestos1" data-desbloquea="compuestos2">Materiales compuestos I</button>
+        <button class="ramo" id="seleccionMat">Selección de materiales</button>
+        <button class="ramo bloqueado" id="simulacion">Simulación por elementos finitos</button>
+        <button class="ramo" id="ceramicosAvanzados">Cerámicos avanzados</button>
+        <button class="ramo bloqueado" id="unionMat">Unión de materiales</button>
+        <button class="ramo" id="concreto">Tecnología de concreto y sus materiales</button>
 
-        <h2>Semestre 10</h2>
-        <button class="ramo">Trabajo de investigación</button>
-        <button id="matComp2" class="ramo bloqueado">Materiales compuestos II</button>
-        <button class="ramo">Optimización de procesos</button>
-        <button class="ramo">Manufactura aditiva</button>
-        <button class="ramo">Biomateriales</button>
-
+        <h3>Semestre 10</h3>
+        <button class="ramo" id="investigacion">Trabajo de investigación</button>
+        <button class="ramo bloqueado" id="compuestos2">Materiales compuestos II</button>
+        <button class="ramo" id="optimizacion">Optimización de procesos</button>
+        <button class="ramo" id="aditiva">Manufactura aditiva</button>
+        <button class="ramo" id="biomateriales">Biomateriales</button>
     </div>
 
     <script src="script.js"></script>
