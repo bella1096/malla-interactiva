@@ -4,29 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Malla Interactiva Ingeniería de Materiales</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-    <h1>Malla Interactiva - Ingeniería de Materiales</h1>
-    <div id="malla">
+    <h1>Malla Curricular Interactiva</h1>
+    <div class="malla">
+
         <!-- PRIMER AÑO -->
-        <h2>Primer Año - Semestre 1</h2>
-        <button id="calculo1">Cálculo I</button>
-        <button id="fisica1">Física I</button>
-        <button id="quimicaGeneral">Química General</button>
-        <button id="metodologia">Metodología del trabajo académico</button>
-        <button id="dibujo">Dibujo en ingeniería</button>
-        <button id="fundMatematica">Fundamentos de la matemática</button>
+        <h2>Primer Año</h2>
+        <h3>Semestre 1</h3>
+        <button class="ramo" data-desbloquea="calculo2">Cálculo I</button>
+        <button class="ramo" data-desbloquea="fisica2">Física I</button>
+        <button class="ramo" data-desbloquea="quimica-organica,termo-cinetica">Química General</button>
+        <button class="ramo">Metodología del trabajo académico</button>
+        <button class="ramo">Dibujo en ingeniería</button>
+        <button class="ramo">Fundamentos de la matemática</button>
 
-        <h2>Primer Año - Semestre 2</h2>
-        <button id="calculo2" disabled>Cálculo II</button>
-        <button id="fisica2" disabled>Física II</button>
-        <button id="quimicaOrganica" disabled>Química orgánica</button>
-        <button id="introIngMateriales" disabled>Introducción a Ingeniería de materiales</button>
-        <button id="realidadNacional">Realidad nacional</button>
-        <button id="linguistica">Lingüística, comprensión y redacción académica</button>
+        <h3>Semestre 2</h3>
+        <button id="calculo2" class="ramo bloqueado" data-desbloquea="ecuaciones">Cálculo II</button>
+        <button id="fisica2" class="ramo bloqueado" data-desbloquea="fisica-moderna">Física II</button>
+        <button id="quimica-organica" class="ramo bloqueado">Química orgánica</button>
+        <button class="ramo" data-desbloquea="ciencia-materiales1">Introducción a Ingeniería de materiales</button>
+        <button class="ramo">Realidad nacional</button>
+        <button class="ramo">Lingüística, comprensión y redacción académica</button>
 
-        <!-- Aquí seguirías agregando todos los semestres de la misma forma -->
+        <!-- SEGUNDO AÑO -->
+        <h2>Segundo Año</h2>
+        <h3>Semestre 3</h3>
+        <button class="ramo">Ciudadanía e interculturalidad</button>
+        <button id="ecuaciones" class="ramo bloqueado" data-desbloquea="algebra-lineal">Ecuaciones diferenciales</button>
+        <button id="fisica-moderna" class="ramo bloqueado" data-desbloquea="mecanica-materiales">Física moderna</button>
+        <button class="ramo" data-desbloquea="gestion-calidad">Estadística y diseño experimental</button>
+        <button id="termo-cinetica" class="ramo bloqueado" data-desbloquea="fenomenos-transferencia">Termodinámica y cinética</button>
+        <button class="ramo">Filosofía de las ciencias</button>
+
+        <h3>Semestre 4</h3>
+        <button class="ramo">Ecología y conservación ambiental</button>
+        <button id="algebra-lineal" class="ramo bloqueado" data-desbloquea="metodos-numericos">Álgebra lineal</button>
+        <button id="mecanica-materiales" class="ramo bloqueado" data-desbloquea="ensayo-materiales">Mecánica de materiales</button>
+        <button id="ciencia-materiales1" class="ramo bloqueado" data-desbloquea="ciencia-materiales2">Ciencia de materiales I</button>
+        <button id="fenomenos-transferencia" class="ramo bloqueado" data-desbloquea="transformacion-fases">Fenómenos de transferencia</button>
+        <button class="ramo">Economía general</button>
+
+        <!-- TERCER AÑO -->
+        <h2>Tercer Año</h2>
+        <h3>Semestre 5</h3>
+        <button class="ramo">Ética general y deontología</button>
+        <button id="gestion-calidad" class="ramo bloqueado">Gestión y control de calidad</button>
+        <button id="transformacion-fases" class="ramo bloqueado" data-desbloquea="materiales-metalicos,materiales-ceramicos1">Transformación de fases</button>
+        <button id="metodos-numericos" class="ramo bloqueado">Métodos numéricos aplicados</button>
+        <button id="ciencia-materiales2" class="ramo bloqueado" data-desbloquea="polimeros1,caracterizacion-materiales">Ciencia de materiales II</button>
+        <button class="ramo">Inglés</button>
+
+        <!-- Los demás semestres siguen con la misma estructura -->
+        <!-- ... -->
     </div>
 
     <script src="script.js"></script>
